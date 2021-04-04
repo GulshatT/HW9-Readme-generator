@@ -1,71 +1,83 @@
-// TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
-//const markdown = require("markdown");
-
-// TODO: Create an array of questions for user input
-//const questions = [];
+const markdown = require("")
 inquirer.prompt([
-            {
-                type: "input",
-                message: "Please enter your project title?",
-                name: "title"
-            },
-            {
-                type: "input",
-                message: "Please provide a description of your project",
-                name: "description"
-            },
-            {
-                type: "input",
-                message: "What is the deployed link of your project?",
-                name: "usage"
-            },
-            {
-                type: "input",
-                message:"Please enter License name",
-                name: "LicenseName",
-                choice: ["MIT", "Apache", "GNU GPLv3", "ISC"]
-            },
-            {
-                type: "input",
-                message: "Please enter Table of Contents",
-                name: "contents"
-            },
-            {
-                type: "input",
-                message: "Tests",
-                name: "tests"
-            },
-            {
-                type: "input",
-                message: "What is your GitHub username",
-                name: "username"
-            },
-            {
-                type:"input",
-                message: "What is your email address?",
-                name: "email"
-            }
-        ]).then(function(res) {
-            console.log(res);            
-        })
-    
+    {
+        type: "input",
+        message: "Please enter your project title?",
+        name: "title"
+    },
+    {
+        type: "input",
+        message: "Please provide a description of your project.",
+        name: "description"
+    },
+    {
+        type: "input",
+        message: "What is the deployed link of your project? (Please put https:// in it)",
+        name: "usage"
+    },
+    {
+        type: "input",
+        message: "Please enter License name.",
+        name: "LicenseName",
+        choice: ["MIT", "Apache", "GNU GPLv3", "ISC"]
+    },
+    {
+        type: "input",
+        message: "Please enter Table of Contents",
+        name: "content"
+    },
+    {
+        type: "input", 
+        message: "Tests",
+        name: "test"
+    },
+    {
+        type: "input",
+        message: "What is your GitHub username?",
+        name: "username"
+    },
+    {
+        type: "input",
+        message: "What is your email address?",
+        name: "email"
+    }
+]).then(function(res) {
+    console.log(res)
+})
 
+    const readme = (answers) =>
+    `# Table of Contents:
+    *[Description](#Description)
+    *[Usage](#Usage)
+    *[Test](#Test)
+    *[License](#License)
+    *[GitHub](#GitHub)
+    *[Email](#Email)
 
-// TODO: Create an array of questions for user input
-//const questions = [];
+    #Title:
+    # ${answers.title}
 
-// TODO: Create a function to write README file
-//function writeToFile(fileName, data) {}
-//const writeFileAsync = util.promisify(fs.writeFile);
-//userPromts();
-//async function userPrompts() {
-    //try {
-        //const userInput = await inquirer.prompt([
-// TODO: Create a function to initialize app
-//function init() {}
+    ## Description:
+    ${answers.description}
 
-// Function call to initialize app
-//init();
+    ## Usage:
+    ${answers.usage}
+
+    ## Test:
+    ${answers.test}
+
+    ## License:
+    ${answers.license}
+
+    ## GitHub
+    Please visit my ${answers.github} to see my work.
+
+    ## Email
+    My Email is ${answers.email}.`;
+
+    //fs.writeFile(fileName, readme, (err) =>
+    //err? console.error(err) : console.log(`Success!`))
+//})
