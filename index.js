@@ -1,7 +1,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
-const markdown = require("")
+//const markdown = require("")
+
 inquirer.prompt([
     {
         type: "input",
@@ -48,35 +49,35 @@ inquirer.prompt([
     console.log(res)
 })
 
-    const readme = (answers) =>
-    `# Table of Contents:
-    *[Description](#Description)
-    *[Usage](#Usage)
-    *[Test](#Test)
-    *[License](#License)
-    *[GitHub](#GitHub)
-    *[Email](#Email)
+    // const readme = (answers) =>
+    // `# Table of Contents:
+    // *[Description](#Description)
+    // *[Usage](#Usage)
+    // *[Test](#Test)
+    // *[License](#License)
+    // *[GitHub](#GitHub)
+    // *[Email](#Email)
 
-    #Title:
-    # ${answers.title}
+    // #Title:
+    // # ${answers.title}
 
-    ## Description:
-    ${answers.description}
+    // ## Description:
+    // ${answers.description}
 
-    ## Usage:
-    ${answers.usage}
+    // ## Usage:
+    // ${answers.usage}
 
-    ## Test:
-    ${answers.test}
+    // ## Test:
+    // ${answers.test}
 
-    ## License:
-    ${answers.license}
+    // ## License:
+    // ${answers.license}
 
-    ## GitHub
-    Please visit my ${answers.github} to see my work.
+    // ## GitHub
+    // Please visit my ${answers.github} to see my work.
 
-    ## Email
-    My Email is ${answers.email}.`;
+    // ## Email
+    // My Email is ${answers.email}.`;
 
-    //fs.writeFile(fileName, readme, (err) =>
-    //err? console.error(err) : console.log(`Success!`))
+    // //fs.writeFile(fileName, readme, (err) =>
+    // //err? console.error(err) : console.log(`Success!`))
