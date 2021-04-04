@@ -80,4 +80,3 @@ inquirer.prompt([
 
     //fs.writeFile(fileName, readme, (err) =>
     //err? console.error(err) : console.log(`Success!`))
-//})
