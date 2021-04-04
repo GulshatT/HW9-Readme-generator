@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/GulshatT/HW9-Readme-generator/issues"
   },
-  "homepage": "https://github.com/GulshatT/HW9-Readme-generator#readme"
+  "homepage": "https://github.com/GulshatT/HW9-Readme-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
 }
