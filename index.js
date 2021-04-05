@@ -1,7 +1,37 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
-//const markdown = require("")
+
+const generateMarkdown = (answers) =>
+
+`## Table of Contents:
+    *[Description](#Description)
+    *[Usage](#Usage)
+    *[Test](#Test)
+    *[License](#License)
+    *[GitHub](#GitHub)
+    *[Email](#Email)
+
+    #Title:
+    # ${answers.title}
+
+    ## Description:
+    ${answers.description}
+
+    ## Usage:
+    ${answers.usage}
+
+    ## Test:
+    ${answers.test}
+
+    ## License:
+    ${answers.license}
+
+    ## GitHub
+    Please visit my ${answers.github} to see my work.
+
+    ## Email
+    My Email is ${answers.email}`
 
 inquirer.prompt([
     {
@@ -47,37 +77,25 @@ inquirer.prompt([
     }
 ]).then(function(res) {
     console.log(res)
-})
+
+}).then((answers) => {
+    console.log(answers);
+
+    const newREADMEfile = generateMarkdown(answers);
+    // TODO: Create a function to write README file
+    fs.writeFile("README.md", newREADMEfile, (err) =>
+    err? console.log(err) : console.log("File successfully created!")
+    );
+});
 
     // const readme = (answers) =>
-    // `# Table of Contents:
-    // *[Description](#Description)
-    // *[Usage](#Usage)
-    // *[Test](#Test)
-    // *[License](#License)
-    // *[GitHub](#GitHub)
-    // *[Email](#Email)
-
-    // #Title:
-    // # ${answers.title}
-
-    // ## Description:
-    // ${answers.description}
-
-    // ## Usage:
-    // ${answers.usage}
-
-    // ## Test:
-    // ${answers.test}
-
-    // ## License:
-    // ${answers.license}
-
-    // ## GitHub
-    // Please visit my ${answers.github} to see my work.
-
-    // ## Email
-    // My Email is ${answers.email}.`;
+    
 
     // //fs.writeFile(fileName, readme, (err) =>
     // //err? console.error(err) : console.log(`Success!`))
+
+    // TODO: Create a function to initialize app
+//function init() {}
+
+// Function call to initialize app
+//init();
