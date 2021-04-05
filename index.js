@@ -84,10 +84,13 @@ inquirer.prompt([
 
     const newREADMEfile = generateMarkdown(answers);
     // TODO: Create a function to write README file
+    function generateMarkdown(fileName, data) {
     fs.writeFile("README.md", newREADMEfile, (err) =>
     err? console.log(err) : console.log("File successfully created!")
     );
-});
+    }
+})
+
 
     // const readme = (answers) =>
     
